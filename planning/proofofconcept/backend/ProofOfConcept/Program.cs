@@ -1,4 +1,6 @@
 
+using ProofOfConcept.Hubs;
+
 namespace ProofOfConcept
 {
     public class Program
@@ -12,7 +14,10 @@ namespace ProofOfConcept
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
-            builder.Services.AddSwaggerGen();
+            builder.Services.AddSwaggerGen(options =>
+            {
+            });
+            builder.Services.AddSignalR();
 
             var app = builder.Build();
 
@@ -29,6 +34,7 @@ namespace ProofOfConcept
 
 
             app.MapControllers();
+            app.MapHub<TestSignalRHub>("/ws");
 
             app.Run();
         }

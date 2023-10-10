@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using ProofOfConcept.Entities;
 using System.ComponentModel.DataAnnotations;
 using System.Net;
 using System.Net.Mime;
@@ -6,7 +7,7 @@ using System.Net.Mime;
 namespace ProofOfConcept.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("rest/[controller]")]
     public class RestTestController : ControllerBase
     {
         private readonly ILogger<RestTestController> _logger;
@@ -39,21 +40,6 @@ namespace ProofOfConcept.Controllers
             {
                 return Ok(new TestResponse() { Message = "Hello World" });
             }
-        }
-
-        public class TestMessage
-        {
-            public required string Message { get; set; }
-        }
-
-        public class TestResponse
-        {
-            public required string Message { get; set; }
-        }
-
-        public class ErrorResponse
-        {
-            public required string Error { get; set; }
         }
     }
 }
