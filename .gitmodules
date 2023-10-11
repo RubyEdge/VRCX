@@ -1,0 +1,4 @@
+[submodule "planning/proofofconcept/backend/submodules/SigSpec"]
+	path = planning/proofofconcept/backend/submodules/SigSpec
+	url = https://github.com/RubyEdge/SigSpec
+	branch = dubya

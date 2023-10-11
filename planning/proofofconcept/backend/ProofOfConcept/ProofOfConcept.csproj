@@ -11,6 +11,10 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\submodules\SigSpec\src\SigSpec.AspNetCore\SigSpec.AspNetCore.csproj" />
+  </ItemGroup>
+
     <Target Name="CreateOpenApiFiles" AfterTargets="Build">
 	    <Exec Command="dotnet swagger tofile --output ../../specs/rest_openapi.yaml --yaml $(OutputPath)$(AssemblyName).dll v1" WorkingDirectory="$(ProjectDir)" />
 		<Exec Command="dotnet swagger tofile --output ../../specs/rest_openapi.json $(OutputPath)$(AssemblyName).dll v1" WorkingDirectory="$(ProjectDir)" />
