@@ -23,6 +23,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SigSpec.CodeGeneration.CSha
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProofOfConcept.PostBuild", "ProofOfConcept.PostBuild\ProofOfConcept.PostBuild.csproj", "{F348C2CD-1604-42D2-908D-D6D8A873562C}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HelloSignalR", "submodules\SigSpec\src\HelloSignalR\HelloSignalR.csproj", "{2420CAAE-62F7-4BB5-B3FA-0C885A0D6A72}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -65,6 +67,10 @@ Global
 		{F348C2CD-1604-42D2-908D-D6D8A873562C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F348C2CD-1604-42D2-908D-D6D8A873562C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F348C2CD-1604-42D2-908D-D6D8A873562C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2420CAAE-62F7-4BB5-B3FA-0C885A0D6A72}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2420CAAE-62F7-4BB5-B3FA-0C885A0D6A72}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2420CAAE-62F7-4BB5-B3FA-0C885A0D6A72}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2420CAAE-62F7-4BB5-B3FA-0C885A0D6A72}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -77,6 +83,7 @@ Global
 		{3179D6C6-3603-4AAD-9CA0-2DEBBECFD322} = {66A6F7E2-38ED-4BD0-BE4B-45A761F1C0CF}
 		{6B4E0A5D-E099-4B0D-AB58-03FB3FE8B5A5} = {66A6F7E2-38ED-4BD0-BE4B-45A761F1C0CF}
 		{FC531017-E310-438C-A459-0639F7AD5880} = {66A6F7E2-38ED-4BD0-BE4B-45A761F1C0CF}
+		{2420CAAE-62F7-4BB5-B3FA-0C885A0D6A72} = {66A6F7E2-38ED-4BD0-BE4B-45A761F1C0CF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {19608385-99DF-4C0B-91C6-CEA90BC48C70}
