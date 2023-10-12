@@ -9,8 +9,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SigSpec", "SigSpec", "{66A6
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SigSpec.AspNetCore", "submodules\SigSpec\src\SigSpec.AspNetCore\SigSpec.AspNetCore.csproj", "{C234D0B7-BF06-4D03-A01B-1ECF53541907}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProofOfConcept.SigSpec.Build", "ProofOfConcept.SigSpec.Build\ProofOfConcept.SigSpec.Build.csproj", "{3F2BEDD5-EB28-4612-A305-EE16484B219F}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SigSpec.Core", "submodules\SigSpec\src\SigSpec.Core\SigSpec.Core.csproj", "{86B81AA6-CCC1-4FE7-B14F-C640104B62A2}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SigSpec.CodeGeneration.TypeScript", "submodules\SigSpec\src\SigSpec.CodeGeneration.TypeScript\SigSpec.CodeGeneration.TypeScript.csproj", "{F21B240A-7881-4605-BD18-2D3C474D9E06}"
@@ -22,6 +20,8 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SigSpec.Console", "submodules\SigSpec\src\SigSpec.Console\SigSpec.Console.csproj", "{6B4E0A5D-E099-4B0D-AB58-03FB3FE8B5A5}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SigSpec.CodeGeneration.CSharp", "submodules\SigSpec\src\SigSpec.CodeGeneration.CSharp\SigSpec.CodeGeneration.CSharp.csproj", "{FC531017-E310-438C-A459-0639F7AD5880}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProofOfConcept.PostBuild", "ProofOfConcept.PostBuild\ProofOfConcept.PostBuild.csproj", "{F348C2CD-1604-42D2-908D-D6D8A873562C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,10 +37,6 @@ Global
 		{C234D0B7-BF06-4D03-A01B-1ECF53541907}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C234D0B7-BF06-4D03-A01B-1ECF53541907}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C234D0B7-BF06-4D03-A01B-1ECF53541907}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3F2BEDD5-EB28-4612-A305-EE16484B219F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3F2BEDD5-EB28-4612-A305-EE16484B219F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3F2BEDD5-EB28-4612-A305-EE16484B219F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3F2BEDD5-EB28-4612-A305-EE16484B219F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{86B81AA6-CCC1-4FE7-B14F-C640104B62A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{86B81AA6-CCC1-4FE7-B14F-C640104B62A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{86B81AA6-CCC1-4FE7-B14F-C640104B62A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -65,13 +61,16 @@ Global
 		{FC531017-E310-438C-A459-0639F7AD5880}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FC531017-E310-438C-A459-0639F7AD5880}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FC531017-E310-438C-A459-0639F7AD5880}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F348C2CD-1604-42D2-908D-D6D8A873562C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F348C2CD-1604-42D2-908D-D6D8A873562C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F348C2CD-1604-42D2-908D-D6D8A873562C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F348C2CD-1604-42D2-908D-D6D8A873562C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{C234D0B7-BF06-4D03-A01B-1ECF53541907} = {66A6F7E2-38ED-4BD0-BE4B-45A761F1C0CF}
-		{3F2BEDD5-EB28-4612-A305-EE16484B219F} = {66A6F7E2-38ED-4BD0-BE4B-45A761F1C0CF}
 		{86B81AA6-CCC1-4FE7-B14F-C640104B62A2} = {66A6F7E2-38ED-4BD0-BE4B-45A761F1C0CF}
 		{F21B240A-7881-4605-BD18-2D3C474D9E06} = {66A6F7E2-38ED-4BD0-BE4B-45A761F1C0CF}
 		{0648C576-59B7-40BF-97FA-3726D8CCF003} = {66A6F7E2-38ED-4BD0-BE4B-45A761F1C0CF}
