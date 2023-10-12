@@ -1,16 +1,24 @@
-
-using Microsoft.AspNetCore.Builder;
 using ProofOfConcept.Hubs;
 
 namespace ProofOfConcept
 {
+    /// <summary>
+    /// The POC Program.
+    /// </summary>
     public class Program
     {
+        /// <summary>
+        /// The list of SignalR Hubs.
+        /// </summary>
         public static readonly Dictionary<string, Type> HubList = new Dictionary<string, Type>()
         {
             { "/ws", typeof(TestSignalRHub) }
         };
 
+        /// <summary>
+        /// Main.
+        /// </summary>
+        /// <param name="args">Input args.</param>
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
