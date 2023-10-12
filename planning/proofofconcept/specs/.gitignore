@@ -1,2 +1,5 @@
 rest_openapi.json
 rest_openapi.yaml
+API_REST.ts
+sigspec.json
+API_SIGNALR.ts

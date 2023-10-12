@@ -8,9 +8,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="NSwag.CodeGeneration.TypeScript" Version="13.20.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\ProofOfConcept\ProofOfConcept.csproj" />
     <ProjectReference Include="..\submodules\SigSpec\src\SigSpec.CodeGeneration.TypeScript\SigSpec.CodeGeneration.TypeScript.csproj" />
     <ProjectReference Include="..\submodules\SigSpec\src\SigSpec.Core\SigSpec.Core.csproj" />
   </ItemGroup>
 
+	<Target Name="PostBuild" AfterTargets="Build">
+		<Exec Command="$(OutputPath)$(AssemblyName).exe" WorkingDirectory="$(ProjectDir)" />
+	</Target>
+	
 </Project>
