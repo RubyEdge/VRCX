@@ -1,4 +1,5 @@
 ﻿// See https://aka.ms/new-console-template for more information
+using NJsonSchema.CodeGeneration.TypeScript;
 using NSwag;
 using NSwag.CodeGeneration.TypeScript;
 using SigSpec.CodeGeneration.TypeScript;
@@ -48,6 +49,7 @@ namespace ProofOfConcept.PostBuild
         public static void GenerateAndSaveSigSpecToTypeScript(SigSpecDocument document, params string[] savePaths)
         {
             var settings = new SigSpecToTypeScriptGeneratorSettings();
+            SetTypeScriptGeneratorSettings(settings.TypeScriptGeneratorSettings);
             var generator = new SigSpecToTypeScriptGenerator(settings);
             var code = generator.GenerateFile(document);
 
@@ -63,10 +65,17 @@ namespace ProofOfConcept.PostBuild
         public static void GenerateAndSaveOpenApiToTypeScript(OpenApiDocument document, params string[] savePaths)
         {
             var settings = new TypeScriptClientGeneratorSettings();
+            SetTypeScriptGeneratorSettings(settings.TypeScriptGeneratorSettings);
             var generator = new TypeScriptClientGenerator(document, settings);
             var code = generator.GenerateFile();
 
             DeleteAndWrite(code, savePaths);
+        }
+
+        private static void SetTypeScriptGeneratorSettings(TypeScriptGeneratorSettings typeScriptGeneratorSettings)
+        {
+            typeScriptGeneratorSettings.TypeStyle = TypeScriptTypeStyle.Class;
+            typeScriptGeneratorSettings.GenerateConstructorInterface = false;
         }
 
         private static void DeleteAndWrite(string content, params string[] paths)
