@@ -4,52 +4,81 @@ using NSwag.CodeGeneration.TypeScript;
 using SigSpec.CodeGeneration.TypeScript;
 using SigSpec.Core;
 
-string specFolder = @"..\..\specs";
-
+namespace ProofOfConcept.PostBuild
 {
-    var settings = new SigSpecGeneratorSettings();
-    var generator = new SigSpecGenerator(settings);
-
-    // TODO: Add PR to SignalR Core with new IHubDescriptionCollectionProvider service
-    var document = await generator.GenerateForHubsAsync(ProofOfConcept.Program.HubList);
-
+    public class Program
     {
-        var sigSpecJson = document.ToJson();
-        string sigspecFile = $"{specFolder}\\sigspec.json";
-        if (File.Exists(sigspecFile))
-        {
-            File.Delete(sigspecFile);
-        }
-        File.WriteAllText(sigspecFile, sigSpecJson);
-    }
+        private const string SpecFolder = @"..\..\specs";
 
-    {
-        var tsCodeGeneratorSettings = new SigSpecToTypeScriptGeneratorSettings();
-        var tsCodeGenerator = new SigSpecToTypeScriptGenerator(tsCodeGeneratorSettings);
-        var tsCodeFile = tsCodeGenerator.GenerateFile(document);
-
-        string tsSignalRFile = $"{specFolder}\\API_SIGNALR.ts";
-        if (File.Exists(tsSignalRFile))
+        public static async Task Main(string[] args)
         {
-            File.Delete(tsSignalRFile);
+            Console.WriteLine("Generating SigSpec...");
+            var sigSpecDocument = await GenerateSigSpecDocument();
+
+            Console.WriteLine("Saving SigSpec Document...");
+            SaveSigSpecDocument(sigSpecDocument, $"{SpecFolder}\\sigspec.json");
+
+            Console.WriteLine("Generating and Saving SigSpec to TS...");
+            GenerateAndSaveSigSpecToTypeScript(sigSpecDocument, $"{SpecFolder}\\API_SIGNALR.ts");
+
+            Console.WriteLine("Getting OpenAPI...");
+            var openApiDocument = await GetOpenApiDocument($"{SpecFolder}\\rest_openapi.json");
+
+            Console.WriteLine("Generating and Saving OpenAPI to TS...");
+            GenerateAndSaveOpenApiToTypeScript(openApiDocument, $"{SpecFolder}\\API_REST.ts");
+
+            Console.WriteLine("Done");
         }
-        File.WriteAllText(tsSignalRFile, tsCodeFile);
+
+        public static async Task<SigSpecDocument> GenerateSigSpecDocument()
+        {
+            var settings = new SigSpecGeneratorSettings();
+            var generator = new SigSpecGenerator(settings);
+
+            return await generator.GenerateForHubsAsync(ProofOfConcept.Program.HubList);
+        }
+
+        public static void SaveSigSpecDocument(SigSpecDocument document, params string[] savePaths)
+        {
+            var sigSpecJson = document.ToJson();
+
+            DeleteAndWrite(sigSpecJson, savePaths);
+        }
+
+        public static void GenerateAndSaveSigSpecToTypeScript(SigSpecDocument document, params string[] savePaths)
+        {
+            var settings = new SigSpecToTypeScriptGeneratorSettings();
+            var generator = new SigSpecToTypeScriptGenerator(settings);
+            var code = generator.GenerateFile(document);
+
+            DeleteAndWrite(code, savePaths);
+        }
+
+        public static async Task<OpenApiDocument> GetOpenApiDocument(string path)
+        {
+            var openApiFile = File.ReadAllText(path);
+            return await OpenApiDocument.FromJsonAsync(openApiFile);
+        }
+
+        public static void GenerateAndSaveOpenApiToTypeScript(OpenApiDocument document, params string[] savePaths)
+        {
+            var settings = new TypeScriptClientGeneratorSettings();
+            var generator = new TypeScriptClientGenerator(document, settings);
+            var code = generator.GenerateFile();
+
+            DeleteAndWrite(code, savePaths);
+        }
+
+        private static void DeleteAndWrite(string content, params string[] paths)
+        {
+            foreach(var path in paths)
+            {
+                if (File.Exists(path))
+                {
+                    File.Delete(path);
+                }
+                File.WriteAllText(path, content);
+            }
+        }
     }
 }
-
-{
-    var openApiFile = File.ReadAllText($"{specFolder}\\rest_openapi.json");
-    var document = await OpenApiDocument.FromJsonAsync(openApiFile);
-
-    var settings = new TypeScriptClientGeneratorSettings();
-    var generator = new TypeScriptClientGenerator(document, settings);
-    var code = generator.GenerateFile();
-
-    string tsRestApiFile = $"{specFolder}\\API_REST.ts";
-    if (File.Exists(tsRestApiFile))
-    {
-        File.Delete(tsRestApiFile);
-    }
-    File.WriteAllText(tsRestApiFile, code);
-}
-
