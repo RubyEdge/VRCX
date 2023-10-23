@@ -54,7 +54,7 @@ namespace ProofOfConcept.Controllers
             }
             else
             {
-                return Ok(new TestResponse() { Message = "Hello World" });
+                return Ok(new TestResponse() { Message = "Hello " + thing?.Message });
             }
         }
     }
