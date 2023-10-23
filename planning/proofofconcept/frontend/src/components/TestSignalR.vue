@@ -9,12 +9,10 @@ const getPostResp = ref("");
 let client = new Client("https://localhost:8729");
 
 async function get() {
-  // Learn more about Tauri commands at https://tauri.app/v1/guides/features/command
   getRestResp.value = (await client.restTestGET()).toJSON();
 }
 
 async function post() {
-  // Learn more about Tauri commands at https://tauri.app/v1/guides/features/command
   getPostResp.value = (await client.restTestPOST(new TestMessage({ message: message.value }))).toJSON();
 }
 
