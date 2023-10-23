@@ -39,9 +39,10 @@ namespace ProofOfConcept
             {
                 options.AddDefaultPolicy(builder =>
                     builder
+                    .AllowCredentials()
                     .AllowAnyHeader()
                     .AllowAnyMethod()
-                    .AllowAnyOrigin());
+                    .WithOrigins("http://localhost:5000"));
             });
 
             var app = builder.Build();

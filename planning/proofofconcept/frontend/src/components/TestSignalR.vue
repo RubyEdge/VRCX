@@ -7,7 +7,7 @@ const message = ref("");
 const testMessageResp = ref("");
 
 let hubConnection = new signalr.HubConnectionBuilder()
-                            .withUrl("wss://localhost:8729/ws")
+                            .withUrl("https://localhost:8729/ws")
                             .build();
 
 let client = new TestSignalRHub(hubConnection);
@@ -15,6 +15,8 @@ let client = new TestSignalRHub(hubConnection);
 async function testMessage() {
     testMessageResp.value = (await client.testMessage(new TestMessage({ message: message.value }))).toJSON();
 }
+
+hubConnection.start();
 
 </script>
 
