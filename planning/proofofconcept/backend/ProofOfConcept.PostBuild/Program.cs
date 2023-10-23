@@ -78,7 +78,7 @@ namespace ProofOfConcept.PostBuild
         private static void SetTypeScriptGeneratorSettings(TypeScriptGeneratorSettings typeScriptGeneratorSettings)
         {
             typeScriptGeneratorSettings.TypeStyle = TypeScriptTypeStyle.Class;
-            typeScriptGeneratorSettings.GenerateConstructorInterface = false;
+            typeScriptGeneratorSettings.GenerateConstructorInterface = true;
         }
 
         private static void DeleteAndWrite(string content, params string[] paths)
