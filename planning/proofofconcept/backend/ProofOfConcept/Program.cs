@@ -35,8 +35,18 @@ namespace ProofOfConcept
             builder.Services.AddSigSpecDocument(o => o.Hubs["/ws"] = typeof(TestSignalRHub));
 #endif
 
+            builder.Services.AddCors(options =>
+            {
+                options.AddDefaultPolicy(builder =>
+                    builder
+                    .AllowAnyHeader()
+                    .AllowAnyMethod()
+                    .AllowAnyOrigin());
+            });
+
             var app = builder.Build();
 
+            app.UseCors();
 #if DEBUG
             // https://localhost:8729/swagger/v1/swagger.json
             app.UseSwagger();
