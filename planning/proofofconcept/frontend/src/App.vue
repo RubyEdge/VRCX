@@ -10,7 +10,7 @@ import TestSignalR from "./components/TestSignalR.vue";
   <div class="container">
     <h1>Welcome to Tauri!</h1>
 
-    <div class="row">
+    <!-- <div class="row">
       <a href="https://vitejs.dev" target="_blank">
         <img src="/vite.svg" class="logo vite" alt="Vite logo" />
       </a>
@@ -37,11 +37,22 @@ import TestSignalR from "./components/TestSignalR.vue";
       <a href="https://github.com/rust-lang/rust-analyzer" target="_blank"
         >rust-analyzer</a
       >
+    </p> -->
+    <p>
+      TestSignalR
+      <br>
+      <TestSignalR />
     </p>
-
-    <Greet />
-    <TestRest />
-    <TestSignalR />
+    <p>
+      TestRest
+      <br>
+      <TestRest />
+    </p>
+    <p>
+      Greet
+      <br>
+      <Greet />
+    </p>
   </div>
 </template>
 

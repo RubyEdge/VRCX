@@ -1,35 +1,28 @@
 <script setup lang="ts">
 import { ref } from "vue";
-import { Client, TestMessage } from '../api/API_REST';
+import { TestMessage, TestSignalRHub } from "../api/API_SIGNALR"; 
+import * as signalr from '@microsoft/signalr';
 
-const getRestResp = ref("");
 const message = ref("");
-const getPostResp = ref("");
+const testMessageResp = ref("");
 
-let client = new Client("https://localhost:8729");
+let hubConnection = new signalr.HubConnectionBuilder()
+                            .withUrl("wss://localhost:8729/ws")
+                            .build();
 
-async function get() {
-  getRestResp.value = (await client.restTestGET()).toJSON();
-}
+let client = new TestSignalRHub(hubConnection);
 
-async function post() {
-  getPostResp.value = (await client.restTestPOST(new TestMessage({ message: message.value }))).toJSON();
+async function testMessage() {
+    testMessageResp.value = (await client.testMessage(new TestMessage({ message: message.value }))).toJSON();
 }
 
 </script>
 
 <template>
-    <form class="row" @submit.prevent="get">
-      <button type="submit">Rest Get Test</button>
-    </form>
-  
-    <p>{{ getRestResp }}</p>
-
-    
-    <form class="row" @submit.prevent="post">
+    <form class="row" @submit.prevent="testMessage">
         <input id="post-input" v-model="message" placeholder="Enter a name..." />
-        <button type="submit">Rest Post Test</button>
+        <button type="submit">Message Response Test</button>
     </form>
 
-    <p>{{ getPostResp }}</p>
+    <p>{{ testMessageResp }}</p>
 </template>
