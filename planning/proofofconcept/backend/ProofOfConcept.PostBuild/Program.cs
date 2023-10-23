@@ -9,24 +9,27 @@ namespace ProofOfConcept.PostBuild
 {
     public class Program
     {
-        private const string SpecFolder = @"..\..\specs";
+        private const string SpecFolder = "specs";
+        private const string FrontendApiDumpFolder = @"frontend/src/api";
 
         public static async Task Main(string[] args)
         {
+            var rootFolder = args.Length > 0 ? args[0] : @"../../";
+
             Console.WriteLine("Generating SigSpec...");
             var sigSpecDocument = await GenerateSigSpecDocument();
 
             Console.WriteLine("Saving SigSpec Document...");
-            SaveSigSpecDocument(sigSpecDocument, $"{SpecFolder}\\sigspec.json");
+            SaveSigSpecDocument(sigSpecDocument, $"{rootFolder}{SpecFolder}\\sigspec.json");
 
             Console.WriteLine("Generating and Saving SigSpec to TS...");
-            GenerateAndSaveSigSpecToTypeScript(sigSpecDocument, $"{SpecFolder}\\API_SIGNALR.ts");
+            GenerateAndSaveSigSpecToTypeScript(sigSpecDocument, $"{rootFolder}{SpecFolder}\\API_SIGNALR.ts", $"{rootFolder}{FrontendApiDumpFolder}\\API_SIGNALR.ts");
 
             Console.WriteLine("Getting OpenAPI...");
-            var openApiDocument = await GetOpenApiDocument($"{SpecFolder}\\rest_openapi.json");
+            var openApiDocument = await GetOpenApiDocument($"{rootFolder}{SpecFolder}\\rest_openapi.json");
 
             Console.WriteLine("Generating and Saving OpenAPI to TS...");
-            GenerateAndSaveOpenApiToTypeScript(openApiDocument, $"{SpecFolder}\\API_REST.ts");
+            GenerateAndSaveOpenApiToTypeScript(openApiDocument, $"{rootFolder}{SpecFolder}\\API_REST.ts", $"{rootFolder}{FrontendApiDumpFolder}\\API_REST.ts");
 
             Console.WriteLine("Done");
         }
