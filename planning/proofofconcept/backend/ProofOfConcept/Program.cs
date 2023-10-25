@@ -26,12 +26,12 @@ namespace ProofOfConcept
             // Add services to the container.
 
             builder.Services.AddControllers();
+
+#if DEBUG
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
             builder.Services.AddSignalR();
-
-#if DEBUG
             builder.Services.AddSigSpecDocument(o => o.Hubs["/ws"] = typeof(TestSignalRHub));
 #endif
 

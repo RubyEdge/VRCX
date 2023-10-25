@@ -10,6 +10,14 @@ let hubConnection = new signalr.HubConnectionBuilder()
                             .withUrl("https://localhost:8729/ws")
                             .build();
 
+hubConnection.on("UserJoined", (id: string) => {
+    console.log("UserJoined1: " + id);
+});
+
+hubConnection.on("UserJoined", (id: string) => {
+    console.log("UserJoined2: " + id);
+});
+
 let client = new TestSignalRHub(hubConnection);
 
 async function testMessage() {

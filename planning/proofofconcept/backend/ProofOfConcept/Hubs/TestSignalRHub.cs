@@ -9,9 +9,9 @@ namespace ProofOfConcept.Hubs
     public class TestSignalRHub : Hub
     {
         /// <inheritdoc/>
-        public override Task OnConnectedAsync()
+        public override async Task OnConnectedAsync()
         {
-            return base.OnConnectedAsync();
+            await Clients.All.SendAsync("UserJoined", this.Context.ConnectionId);
         }
 
         /// <summary>
