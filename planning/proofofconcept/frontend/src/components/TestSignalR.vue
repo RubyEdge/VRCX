@@ -13,7 +13,7 @@ let hubConnection = new signalr.HubConnectionBuilder()
 let client = new TestSignalRHub(hubConnection);
 
 async function testMessage() {
-    testMessageResp.value = (await client.testMessage(new TestMessage({ message: message.value }))).toJSON();
+    testMessageResp.value = (await client.testMessage(new TestMessage({ message: message.value }))).message;
 }
 
 hubConnection.start();
@@ -22,7 +22,7 @@ hubConnection.start();
 
 <template>
     <form class="row" @submit.prevent="testMessage">
-        <input id="post-input" v-model="message" placeholder="Enter a name..." />
+        <input id="test-message-input" v-model="message" placeholder="Enter a name..." />
         <button type="submit">Message Response Test</button>
     </form>
 
