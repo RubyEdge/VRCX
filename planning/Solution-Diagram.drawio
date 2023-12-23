@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-12-23T18:07:53.371Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:121.0) Gecko/20100101 Firefox/121.0" etag="tcDoLlWSIk4-9o2-KLM-" version="22.1.11" type="github">
+<mxfile host="app.diagrams.net" modified="2023-12-23T18:57:51.334Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:121.0) Gecko/20100101 Firefox/121.0" etag="e2zXEVDoYJ26iecdna2D" version="22.1.11" type="github" pages="2">
   <diagram name="Sources" id="N5JZysFL8yDkOuFjlQNr">
     <mxGraphModel dx="1562" dy="779" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -159,6 +159,80 @@
         </mxCell>
         <mxCell id="HLNh7NcZOK2ivhKC-wmd-72" value="VRCX&lt;br&gt;Process Handler" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="HLNh7NcZOK2ivhKC-wmd-70" vertex="1">
           <mxGeometry x="-4" y="86" width="110" height="40" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="5mTU-wto8n4c1_gRM7_H" name="ProjectMapping_VRCX">
+    <mxGraphModel dx="1077" dy="537" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="p8zjchCSHDD5hUTuwK9D-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="p8zjchCSHDD5hUTuwK9D-1" target="p8zjchCSHDD5hUTuwK9D-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p8zjchCSHDD5hUTuwK9D-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="p8zjchCSHDD5hUTuwK9D-1" target="cwWq_cN60Y4KzPv0ldMm-1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="79.80952380952374" y="520" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="cwWq_cN60Y4KzPv0ldMm-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="p8zjchCSHDD5hUTuwK9D-1" target="cwWq_cN60Y4KzPv0ldMm-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="JN5veMUy8Tp1IvnJk8nl-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="p8zjchCSHDD5hUTuwK9D-1" target="JN5veMUy8Tp1IvnJk8nl-2">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="79.80952380952374" y="700" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="p8zjchCSHDD5hUTuwK9D-1" value="VRC" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="280" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="p8zjchCSHDD5hUTuwK9D-2" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="p8zjchCSHDD5hUTuwK9D-1" target="p8zjchCSHDD5hUTuwK9D-3">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="80" y="490" as="sourcePoint" />
+            <mxPoint x="120" y="370" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="80" y="380" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="p8zjchCSHDD5hUTuwK9D-3" value="Rest" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="120" y="360" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="p8zjchCSHDD5hUTuwK9D-5" value="WebSocket" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="120" y="440" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="cwWq_cN60Y4KzPv0ldMm-1" value="Logs" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="120" y="520" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="cwWq_cN60Y4KzPv0ldMm-2" value="Configuration" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="120" y="600" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="JN5veMUy8Tp1IvnJk8nl-2" value="Registry" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="120" y="680" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="2zrk0aT_jnSiU-f4VeLP-1" value="&lt;h1&gt;Purpose/Rules&lt;br&gt;&lt;/h1&gt;&lt;p&gt;- The VRC namespace will encase all interaction with anything VRC-related.&lt;/p&gt;&lt;p&gt;- The VRC namespace should not contain anything else that does not contribute to its main purpose of interacting with VRC.&lt;/p&gt;&lt;p&gt;- This project should be treated independently, possibly allowing third parties to use this as a sort of &#39;SDK&#39;.&lt;br&gt;&lt;/p&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="85" y="770" width="455" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="2zrk0aT_jnSiU-f4VeLP-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="2zrk0aT_jnSiU-f4VeLP-2" target="2zrk0aT_jnSiU-f4VeLP-5">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="120" y="200" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="110" y="200" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="2zrk0aT_jnSiU-f4VeLP-2" value="&lt;div align=&quot;center&quot;&gt;&lt;b&gt;&lt;u&gt;Root_Namespace&lt;/u&gt;&lt;/b&gt;&lt;br&gt;&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;- Containing organization name/soruce&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;- EX: &lt;i&gt;&lt;u&gt;VRCX&lt;/u&gt;&lt;/i&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="40" y="40" width="140" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="LO5S1-3_nPfKkHY99qIA-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="2zrk0aT_jnSiU-f4VeLP-5" target="LO5S1-3_nPfKkHY99qIA-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="2zrk0aT_jnSiU-f4VeLP-5" value="&lt;div align=&quot;center&quot;&gt;&lt;b&gt;&lt;u&gt;Project_Namespace&lt;/u&gt;&lt;/b&gt;&lt;br&gt;&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;- Containing a sub-section of the organization&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;- EX: &lt;i&gt;VRCX.&lt;u&gt;Rest&lt;/u&gt;&lt;/i&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="130" y="160" width="140" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="LO5S1-3_nPfKkHY99qIA-2" value="&lt;div align=&quot;left&quot;&gt;&lt;u&gt;&lt;b&gt;API&lt;/b&gt;&lt;/u&gt; - Front-facing API&lt;br&gt;&lt;/div&gt;&lt;b&gt;&lt;u&gt;Services&lt;/u&gt;&lt;/b&gt; - Services and Dependency Injection method (most of the logic)&lt;br&gt;&lt;b&gt;&lt;u&gt;Models&lt;/u&gt;&lt;/b&gt; - Models used for the project.&lt;div&gt;&lt;b&gt;&lt;u&gt;Configuration&lt;/u&gt;&lt;/b&gt; - Configuration information.&lt;br&gt;&lt;b&gt;&lt;u&gt;Security&lt;/u&gt;&lt;/b&gt; - Any sort of secure storage service should be handled separately here.&lt;br&gt;&lt;b&gt;&lt;u&gt;Initialize&lt;/u&gt;&lt;/b&gt; - Initialization and migration.&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="320" y="150" width="440" height="100" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
